@@ -63,7 +63,7 @@ You avoid the problem of false delivery by creating an independent definition of
 ### Courage
 Why don’t you fix bad code when you see it? Your first reaction upon seeing a messy function is “This is a mess, it needs to be cleaned.” Your second reaction is “I’m not touching it!” Why? Because you know that if you touch it you risk breaking it; and if you break it, it becomes yours.
    
-### 5. Testing
+## 5. Testing
 
 ### ACCEPTANCE TESTS
 
