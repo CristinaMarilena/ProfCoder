@@ -62,12 +62,34 @@ You avoid the problem of false delivery by creating an independent definition of
 
 ### Courage
 Why don’t you fix bad code when you see it? Your first reaction upon seeing a messy function is “This is a mess, it needs to be cleaned.” Your second reaction is “I’m not touching it!” Why? Because you know that if you touch it you risk breaking it; and if you break it, it becomes yours.
-  
- ## Practicing
- 
-### THE CODING DOJO
+   
+### Testing
 
-#### Kata
+### ACCEPTANCE TESTS
 
-A programming kata is a precise set of choreographed keystrokes and mouse movements that simulates the solving of some programming problem. You aren’t actually solving the problem because you already know the solution. Rather, you are practicing the movements and decisions involved in solving the problem.
+AUTOMATION
+Acceptance tests should always be automated. There is a place for manual testing elsewhere in the software lifecycle, but these kinds of tests should never be manual. The reason is simple: cost.
 
+Following the principle of “late precision,” acceptance tests should be written as late as possible, typically a few days before the feature is implemented. In Agile projects, the tests are written after the features have been selected for the next Iteration or Sprint.
+
+### ACCEPTANCE TESTS AND UNIT TESTS
+
+Acceptance tests are not unit tests. Unit tests are written by programmers for programmers. They are formal design documents that describe the lowest level structure and behavior of the code. The audience is programmers, not business.
+
+### GUIS AND OTHER COMPLICATIONS
+
+There is a design principle called the Single Responsibility Principle (SRP). This principle states that you should separate those things that change for different reasons, and group together those things that change for the same reasons. GUIs are no exception.
+
+For example, there may be several buttons on a page. Rather than creating tests that click on those buttons based on their positions on the page, you may be able to click on them based on their names. Better yet, perhaps they each have a unique ID that you can use. It is much better to write a test that selects the button whose ID is ok_button than it is to select the button in column 3 of row 4 of the control grid.
+
+**_Testing through the Right Interface_**
+
+Better still is to write tests that invoke the features of the underlying system through a real API rather than through the GUI. This API should be the same API used by the GUI. This is nothing new. Design experts have been telling us for decades to separate our GUIs from our business rules.
+
+### CONTINUOUS INTEGRATION
+
+Make sure that all your unit tests and acceptance tests are run several times per day in a continuous integration system. This system should be triggered by your source code control system. Every time someone commits a module, the CI system should kick off a build, and then run all the tests in the system. The results of that run should be emailed to everyone on the team.
+
+## TESTING STRATEGIES
+
+![Alt text](Desktop/Editing ProfCoderREADME.md at master · CristinaMarilenaProfCoder - Google Chrome.jpg?raw=true "Title")
