@@ -53,10 +53,14 @@ Regularly measure your progress against your goal, and come up with three fact-b
 
 You avoid the problem of false delivery by creating an independent definition of “done.” The best way to do this is to have your business analysts and testers create automated acceptance tests5 that must pass before you can say that you are done. These tests should be written in a testing language such as FitNesse, Selenium, RobotFX, Cucumber, and so on. The tests should be understandable by the stakeholders and business people, and should be run frequently.
 
+## Test driven development
 
+### THE THREE LAWS OF TDD
+1. You are not allowed to write any production code until you have first written a failing unit test.
+2. You are not allowed to write more of a unit test than is sufficient to fail—and not compiling is failing.
+3. You are not allowed to write more production code that is sufficient to pass the currently failing unit test.
 
-
-
-
+### Courage
+Why don’t you fix bad code when you see it? Your first reaction upon seeing a messy function is “This is a mess, it needs to be cleaned.” Your second reaction is “I’m not touching it!” Why? Because you know that if you touch it you risk breaking it; and if you break it, it becomes yours.
   
  
