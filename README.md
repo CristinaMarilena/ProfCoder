@@ -1,6 +1,6 @@
 # ProfCoder
 
-## Starting and finishing a development task
+## 1. Starting and finishing a development task
 
 1. First, your code must work. You must understand what problem you are solving and understand how to solve that problem. 
 You must ensure that the code you write is a faithful representation of that solution. You must manage every detail of that solution while remaining consistent within the language, platform, current architecture, and all the warts of the current system.
@@ -11,7 +11,7 @@ You must ensure that the code you write is a faithful representation of that sol
 
 4. Your code must be readable by other programmers. This is not simply a matter of writing nice comments. Rather, it requires that you craft the code in such a way that it reveals your intent. This is hard to do. Indeed, this may be the most difficult thing a programmer can master.
 
-## Distractions and blocking
+## 2. Distractions and blocking
 
   When you cannot concentrate and focus sufficiently, the code you write will be wrong. It will have bugs. It will have the wrong structure. It will be opaque and convoluted. It will not solve the customers’ real problems. In short, it will have to be reworked or redone. Working while distracted creates waste.
   
@@ -29,7 +29,7 @@ You must ensure that the code you write is a faithful representation of that sol
 I read a lot, and I read all kinds of material. I read material on software, politics, biology, astronomy, physics, chemistry, mathematics, and much more. However,I find that the thing that best primes the pump of creative output is science
 fiction. For you, it might be something else. 
 
-## Coding
+## 3. Coding
 
 ### DEBUGGING TIME
 
@@ -53,7 +53,7 @@ Regularly measure your progress against your goal, and come up with three fact-b
 
 You avoid the problem of false delivery by creating an independent definition of “done.” The best way to do this is to have your business analysts and testers create automated acceptance tests5 that must pass before you can say that you are done. These tests should be written in a testing language such as FitNesse, Selenium, RobotFX, Cucumber, and so on. The tests should be understandable by the stakeholders and business people, and should be run frequently.
 
-## Test driven development
+## 4. Test driven development
 
 ### THE THREE LAWS OF TDD
 1. You are not allowed to write any production code until you have first written a failing unit test.
@@ -63,7 +63,7 @@ You avoid the problem of false delivery by creating an independent definition of
 ### Courage
 Why don’t you fix bad code when you see it? Your first reaction upon seeing a messy function is “This is a mess, it needs to be cleaned.” Your second reaction is “I’m not touching it!” Why? Because you know that if you touch it you risk breaking it; and if you break it, it becomes yours.
    
-### Testing
+### 5. Testing
 
 ### ACCEPTANCE TESTS
 
