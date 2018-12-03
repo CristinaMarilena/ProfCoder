@@ -92,4 +92,4 @@ Make sure that all your unit tests and acceptance tests are run several times pe
 
 ## TESTING STRATEGIES
 
-![Alt text](Desktop/Editing ProfCoderREADME.md at master · CristinaMarilenaProfCoder - Google Chrome.jpg?raw=true "Title")
+file:///C:/Users/Cristina.Ilie/Desktop/Editing%20ProfCoderREADME.md%20at%20master%20%C2%B7%20CristinaMarilenaProfCoder%20-%20Google%20Chrome.jpg
