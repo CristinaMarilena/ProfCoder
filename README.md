@@ -71,10 +71,3 @@ Why don’t you fix bad code when you see it? Your first reaction upon seeing a 
 
 A programming kata is a precise set of choreographed keystrokes and mouse movements that simulates the solving of some programming problem. You aren’t actually solving the problem because you already know the solution. Rather, you are practicing the movements and decisions involved in solving the problem.
 
-The Bowling Game:  http://butunclebob.com/ArticleS.UncleBob.TheBowling-GameKata
-
-Prime Factors:  http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactors-Kata
-
-Word Wrap:  http://thecleancoder.blogspot.com/2010/10/craftsman-62-darkpath.html
-
-Kata on music : http://katas.softwarecraftsmanship.org/?p=71
