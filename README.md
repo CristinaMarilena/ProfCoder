@@ -90,6 +90,70 @@ Better still is to write tests that invoke the features of the underlying system
 
 Make sure that all your unit tests and acceptance tests are run several times per day in a continuous integration system. This system should be triggered by your source code control system. Every time someone commits a module, the CI system should kick off a build, and then run all the tests in the system. The results of that run should be emailed to everyone on the team.
 
-## TESTING STRATEGIES
+### TESTING STRATEGIES
 
 ![editing profcoderreadme md at master cristinamarilenaprofcoder - google chrome](https://user-images.githubusercontent.com/23499989/49387573-72b1be00-f722-11e8-8f5e-489ba8a85b26.jpg)
+
+## 6. Time management
+
+### ITERATION PLANNING MEETINGS
+
+Iteration planning meetings are meant to select the backlog items that will be executed in the next iteration. Estimates should already be done for the candidate items. Assessment of business value should already be done. In really good organizations the acceptance/component tests will already be written, or at least sketched out. No more than five or ten
+minutes should be spent on any given item. If a longer discussion is needed, it should be scheduled for another time with a subset of the team.
+
+**_My rule of thumb is that the meeting should take no more than 5% of the total time in the iteration. So for a one week iteration (forty hours) the meeting should be over within two hours._**
+
+### ITERATION RESTROSPECTIVE AND DEMO
+
+These meetings are conducted at the end of each iteration. Team members discuss what went right and what went wrong. Stakeholders see a demo of the newly working features. These meetings can be badly abused and can soak up a lot of time, so schedule them 45 minutes before quitting time on the last day of the iteration. Allocate no more than 20 minutes for retrospective and 25 minutes for the demo. 
+
+### ARGUMENTS
+
+How do you get the data you need to settle a disagreement? Sometimes you can run experiments, or do some simulation or modeling. But sometimes the best alternative is to simply flip a coin to choose one of the two paths in question.
+
+If things work out, then that path was workable. If you get into trouble, you can back out and go down the other path. It would be wise to agree on a time as well as a set of criteria to help determine when the chosen path should be abandoned.
+
+**_If an argument must truly be settled, then ask each of the arguers to present their case to the team in five minutes or less. Then have the team vote. The whole meeting will take less than fifteen minutes._**
+
+### FOCUS MANA
+
+Professional developers learn to manage their time to take advantage of their focus-manna. We write code when our focus-manna is high; and we do other, less productive things when it’s not.
+
+### SLEEP
+
+I can’t stress this one strongly enough. I have the most focus-manna after a good night’s sleep. Seven hours of sleep will often give me a full eight hours’ worth of focus-manna. Professional developers manage their sleep schedule to ensure that they have topped up their focus-manna by the time they get to work in the morning.
+
+### RECHARGING
+
+Focus-manna can be partially recharged by de-focussing. 
+- a good long walk
+- a conversation with friends
+- a time of just looking out a window can all help to pump the focus-manna back up. 
+- some people meditate
+- other people grab a power nap
+- others will listen to a podcast or thumb through a magazine.
+
+I have found that once the manna is gone, you can’t force the focus. You can still write code, but you’ll almost certainly have to rewrite it the next day, or live with a rotting mass for weeks
+
+
+### POMODORO TECHNIQUE - TO READ
+
+### BLIND ALLEYS
+
+Blind alleys are a fact of life for all software craftsmen. Sometimes you will make a decision and wander down a technical pathway that leads to nowhere. The more vested you are in your decision, the longer you will wander in the wilderness. If you’ve staked your professional reputation, you’ll wander forever.
+
+
+Prudence and experience will help you avoid certain blind alleys, but you’ll never avoid them all. So the real skill you need is to quickly realize when you are in one, and have the courage to back out. **_This is sometimes called The Rule of
+Holes: When you are in one, stop digging._**
+
+### MARSHES , BOGS , SWAMPS , AND OTHER MESSES
+
+Worse than blind alleys are messes. Messes slow you down, but don’t stop you. Messes impede your progress, but you can still make progress through sheer brute force. Messes are worse than blind alleys because you can always see the way forward, and it always looks shorter than the way back (but it isn’t).
+
+The problem is that starting a mess, like going down a blind alley, is unavoidable. Experience and prudence can help you to avoid them, but eventually you will make a decision that leads to a mess. The progression of such a mess is insidious. You create a solution to a simple problem, being careful to keep the code simple and clean. 
+
+As the problem grows in scope and complexity you extend that code base, keeping it as clean as you can. At some point you realize that you made a wrong design choice when you started, and that your code doesn’t scale well in the direction that the requirements are moving. This is the inflection point! You can still go back and fix the design. But you can also continue to go forward. Going back looks expensive because you’ll have to rework the existing code, but going back will never be easier than it is now. If you go forward you will drive the system into a swamp from which it may never escape.
+
+**_Moving forward through a swamp, when you know it’s a swamp, is the worst kind of priority inversion. By moving forward you are lying to yourself, lying to your team, lying to your company, and lying to your customers. You are telling them that all will be well, when in fact you are heading to a shared doom._**
+
+## Estimation
