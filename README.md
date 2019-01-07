@@ -156,4 +156,3 @@ As the problem grows in scope and complexity you extend that code base, keeping 
 
 **_Moving forward through a swamp, when you know it’s a swamp, is the worst kind of priority inversion. By moving forward you are lying to yourself, lying to your team, lying to your company, and lying to your customers. You are telling them that all will be well, when in fact you are heading to a shared doom._**
 
-## Estimation
