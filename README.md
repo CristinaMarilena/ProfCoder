@@ -174,3 +174,27 @@ If we all checked-in our code a little cleaner than when we checked it out, the 
 * Eliminate one small bit of duplication
 * Clean up one composite if statement.
 
+## Meaningful Names
+
+The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
+
+          int d; // elapsed time in days
+          
+The name d reveals nothing. It does not evoke a sense of elapsed time, nor of days. We should choose a name that specifies what is being measured and the unit of that measurement:
+
+          int elapsedTimeInDays;
+          int daysSinceCreation;
+          int daysSinceModification;
+          int fileAgeInDays;
+
+### Avoid Disinformation
+
+Programmers must avoid leaving false clues that obscure the meaning of code. We should avoid words whose entrenched meanings vary from our intended meaning. For example, hp, aix, and sco would be poor variable names because they are the names of Unix platforms or variants. Even if you are coding a hypotenuse and hp looks like a good abbreviation, it could be disinformative.
+
+
+**Do not refer to a grouping of accounts as an accountList unless it’s actually a List.**
+
+The word list means something specific to programmers. If the container holding the accounts is not actually a List, it may lead to false conclusions.1 So accountGroup or bunchOfAccounts or just plain accounts would be better.
+
+**It’s probably better not to encode the container type into the name.**
+
