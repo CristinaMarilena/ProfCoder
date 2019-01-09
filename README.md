@@ -158,7 +158,7 @@ As the problem grows in scope and complexity you extend that code base, keeping 
 
 # CLEAN CODE
 
-## Clean code
+## 1. Clean code
 
 ### THE BOY SCOUT RULE
 
@@ -174,7 +174,7 @@ If we all checked-in our code a little cleaner than when we checked it out, the 
 * Eliminate one small bit of duplication
 * Clean up one composite if statement.
 
-## Meaningful Names
+## 2. Meaningful Names
 
 The name of a variable, function, or class, should answer all the big questions. It should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
 
@@ -187,7 +187,7 @@ The name d reveals nothing. It does not evoke a sense of elapsed time, nor of da
           int daysSinceModification;
           int fileAgeInDays;
 
-### Avoid Disinformation
+### AVOID DISINFORMATION
 
 Programmers must avoid leaving false clues that obscure the meaning of code. We should avoid words whose entrenched meanings vary from our intended meaning. For example, hp, aix, and sco would be poor variable names because they are the names of Unix platforms or variants. Even if you are coding a hypotenuse and hp looks like a good abbreviation, it could be disinformative.
 
@@ -197,4 +197,59 @@ Programmers must avoid leaving false clues that obscure the meaning of code. We 
 The word list means something specific to programmers. If the container holding the accounts is not actually a List, it may lead to false conclusions.1 So accountGroup or bunchOfAccounts or just plain accounts would be better.
 
 **It’s probably better not to encode the container type into the name.**
+
+### MAKE MEANINGFUL DISTINCTIONS
+
+Consider, for example, the truly hideous practice of creating a variable named klass just because the name class was used for something else.
+
+Noise words are another meaningless distinction. Imagine that you have a **Product** class. If you have another called **ProductInfo** or **ProductData**, you have made the names different without making them mean anything different. Info and Data are indistinct noise words like a, an, and the.
+
+### USE PONOUNCEABLE NAMES
+
+If you can’t pronounce it, you can’t discuss it without sounding like an idiot. “Well, over here on the bee cee arr three cee enn tee we have a pee ess zee kyew int, see?” This matters because programming is a social activity.
+
+Compare
+
+                          class DtaRcrd102 {
+                          private Date genymdhms;
+                          private Date modymdhms;
+                          private final String pszqint = "102";
+                          /* ... */
+                          };
+to
+
+                          class Customer {
+                          private Date generationTimestamp;
+                          private Date modificationTimestamp;;
+                          private final String recordId = "102";
+                          /* ... */
+                          };
+                          
+Intelligent conversation is now possible: “Hey, Mikey, take a look at this record! The **generation timestamp** is set to tomorrow’s date! How can that be?”
+
+### USE SEARCHABLE NAMES
+
+My personal preference is that single-letter names can ONLY be used as local variables inside short methods. The length of a name should correspond to the size of its scope. If a variable or constant might be seen or used in multiple places in a body of code, it is imperative to give it a search-friendly name.
+
+Once again compare
+
+                    for (int j=0; j<34; j++) {
+                    s += (t[j]*4)/5;
+                    }
+to
+
+                    int realDaysPerIdealDay = 4;
+                    const int WORK_DAYS_PER_WEEK = 5;
+                    int sum = 0;
+                    for (int j=0; j < NUMBER_OF_TASKS; j++) {
+                    int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+                    int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
+                    sum += realTaskWeeks;
+                    }
+                    
+Note that sum, above, is not a particularly useful name but at least is searchable. The intentionally named code makes for a longer function, but consider how much easier it will be to find WORK_DAYS_PER_WEEK than to find all the places where 5 was used and filter the list down to just the instances with the intended meaning.
+
+
+
+
 
