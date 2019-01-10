@@ -263,6 +263,15 @@ Methods should have verb or verb phrase names like postPayment, deletePage, or s
                     
 **Consider enforcing their use by making the corresponding constructors private.**
 
+## 3. Functions
+
+### SMALL
+
+**The first rule of functions is that they should be small. The second rule of functions is that they should be smaller than that.**
+
+**FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.**
+
+So, another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation.
 
 
 
