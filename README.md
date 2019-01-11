@@ -273,6 +273,12 @@ Methods should have verb or verb phrase names like postPayment, deletePage, or s
 
 So, another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation.
 
+### ONE LEVEL ON ABSTRACTION PER FUNCTION
 
+In order to make sure our functions are doing “one thing,” we need to make sure that the statements within our function are all at the same level of abstraction. There are concepts in there that are at a **very high level of abstraction, such as getHtml()**; others that are at an **intermediate level of abstraction, such as: String pagePathName = PathParser.render(pagePath)**; and still others that are remarkably **low level, such as: .append("\n")**. 
+
+!!! Mixing levels of abstraction within a function is always confusing.
+
+### 
 
 
