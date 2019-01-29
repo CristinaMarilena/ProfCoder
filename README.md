@@ -345,6 +345,9 @@ In order to make sure our functions are doing “one thing,” we need to make s
             }
           }
 
+### ARGUMENTS
+
+Do not use flag arguments, it definitely does more than one thing.One thing if it s true and one if it s false. Also, they are very confusing.
 
 
 
