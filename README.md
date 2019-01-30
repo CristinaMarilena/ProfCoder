@@ -347,7 +347,39 @@ In order to make sure our functions are doing “one thing,” we need to make s
 
 ### ARGUMENTS
 
-Do not use flag arguments, it definitely does more than one thing.One thing if it s true and one if it s false. Also, they are very confusing.
+Do not use flag arguments, it definitely does more than one thing.One thing if it s true and one if it s false. Also, they are very confusing.The ideal nr of arguments 0,1,2. Three already complicates things a lot for the tests where you need to consider all the states of the parameters.More then three should not happen. If you need more, then you probably need to create a new class with some of them that would respect a domanin logic.
+
+### EXTRACT TRY/CATCH BLOCKS
+
+try/catch block are ugly on their own, but a better decision than returning an error code.For example, consider having a try/catch with three methods that are called. You should consider the solution of extracting the body of the try into a funtion on it s own. 
+
+For example:
+
+      try {
+      deletePage(page);
+      registry.deleteRefecencePage(page.name);
+      }
+      catch(Exception e) {
+        logError(e);
+      }
+ into ->
+ 
+      try{
+      deletePageAndReferences();
+      }
+      catch(..
+      
+      
+      public void deletePageAndReeferences() throws Exception{
+         deletePage(page);
+         registry.deleteRefecencePage(page.name);
+      }
+    
+ **_ERROR HANDLING IS ONE THING_ That means, a function that handles errors shouldnt do soemthing else**.
+ 
+ 
+
+
 
 
 
