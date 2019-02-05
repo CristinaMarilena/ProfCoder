@@ -410,6 +410,50 @@ Notice how nicely the equations read. The factors have no white space between th
 
 Unfortunately, most tools for reformatting code are blind to the precedence of operators and impose the same spacing throughout. So subtle spacings like those shown above tend to get lost after you reformat the code.
 
+## Objects and data structures
+
+### DATA ABSTRACTION
+
+Hiding/showing the implementaion.
+
+          Listing 6-1
+          --------------
+          Concrete Point
+          public class Point {
+          public double x;
+          public double y;
+          }
+          
+          
+          Listing 6-2
+          -------------
+          Abstract Point
+          public interface Point {
+          double getX();
+          double getY();
+          void setCartesian(double x, double y);
+          double getR();
+          double getTheta();
+          void setPolar(double r, double theta);
+          }
+          
+          
+6-2 The methods enforce an access policy. You can read the individual coordinates independently, but you must set the coordinates
+together as an atomic operation.      
+
+Listing 6-1, on the other hand, is very clearly implemented in rectangular coordinates, and it forces us to manipulate those coordinates independently. This exposes implementation. Indeed, it would expose implementation even if the variables were private and we
+were using single variable getters and setters.
+
+**_Hiding implementation is about abstractions! A class does not simply push its variables out through getters and setters. Rather it exposes abstract interfaces that allow its users to manipulate the essence of the data, without having to know its
+implementation._**
+
+#### Abstraction
+
+**!!!Abstraction is one of the key elements of good software design.
+It helps encapsulate behavior. It helps decouple software elements. It helps having more self-contained modules. And much more.**
+
+https://dzone.com/articles/why-abstraction-really
+
 
 
 
