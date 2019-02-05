@@ -378,6 +378,39 @@ For example:
  **_ERROR HANDLING IS ONE THING_ That means, a function that handles errors shouldnt do soemthing else**.
  
  
+## Formating
+
+### VERTICAL FORMATING
+
+**Instance variables** should be declared at the top of the class. This should not increase the vertical distance of these variables, because in a well-designed class, they are used by many, if not all, of the methods of the class.
+
+**Dependent Functions.** If one function calls another, they should be vertically close, and the caller should be above the callee, if at all possible. This gives the program a natural flow. If the convention is followed reliably, readers will be able to trust that function definitions will follow shortly after their use.
+
+### HORIZONTAL FORMATTING
+
+This suggests that we should strive to keep our lines short. The old Hollerith limit of 80 is a bit arbitrary, and I’m not opposed to lines edging out to 100 or even 120. But beyond that is probably just careless. I used to follow the rule that you should never have to scroll to the right. But monitors are too wide for that nowadays, and younger programmers can shrink the font so small that they can get 200 characters across the screen. Don’t do that. I personally set my limit at 120.
+
+Another use for white space is to accentuate the precedence of operators.
+
+            public class Quadratic {
+            public static double root1(double a, double b, double c) {
+            double determinant = determinant(a, b, c);
+            return (-b + Math.sqrt(determinant)) / (2*a);
+            }
+            public static double root2(int a, int b, int c) {
+            double determinant = determinant(a, b, c);
+            return (-b - Math.sqrt(determinant)) / (2*a);
+            }
+            private static double determinant(double a, double b, double c) {
+            return b*b - 4*a*c;
+            }
+            }
+            
+Notice how nicely the equations read. The factors have no white space between them because they are high precedence. The terms are separated by white space because addition and subtraction are lower precedence.
+
+Unfortunately, most tools for reformatting code are blind to the precedence of operators and impose the same spacing throughout. So subtle spacings like those shown above tend to get lost after you reformat the code.
+
+
 
 
 
