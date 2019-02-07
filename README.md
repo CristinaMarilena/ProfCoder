@@ -454,7 +454,9 @@ It helps encapsulate behavior. It helps decouple software elements. It helps hav
 
 https://dzone.com/articles/why-abstraction-really
 
+### DATA TRANSFER OBJECTS
 
+https://www.thoughtfulcode.com/orm-active-record-vs-data-mapper/
 
 
 
