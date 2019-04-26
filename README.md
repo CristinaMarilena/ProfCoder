@@ -588,8 +588,9 @@ tangled and bug-riddled production code, frustrated customers, and the feeling t
 
 That sums up almost every reason test should cover at least 90% or more of the production code.
 
-Unit testing conventions : * **BUILD-OPERATE_CHECK** as the steps for a unit test
-                           * **given_when_then** as a name for unit tests
-                           * **Single concept** per test
+Unit testing conventions : 
+  * **BUILD-OPERATE_CHECK** as the steps for a unit test
+  * **given_when_then** as a name for unit tests
+  * **Single concept** per test
                            
                            
