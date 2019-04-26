@@ -592,7 +592,10 @@ Unit testing conventions :
   * **BUILD-OPERATE_CHECK** as the steps for a unit test
   * **given_when_then** as a name for unit tests
   * **Single concept** per test
-  * F.I.R.S.T. Clean tests follow five other rules that form the above acronym:
+  * **F.I.R.S.T.**
+  
+  Clean tests follow five other rules that form the above acronym:
+  -> 
               * **Fast** 
               Tests should be fast. They should run quickly. When tests run slow, you won’t wantto run them frequently. If you don’t run               them frequently, you won’t find problems early enough to fix them easily. You won’t feel as free to clean up the code.                   Eventually the code will begin to rot.
               * **Independent**
