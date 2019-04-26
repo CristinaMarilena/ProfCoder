@@ -608,3 +608,7 @@ Unit testing conventions :
               The tests need to be written in a timely fashion. Unit tests should be written just before the production code that makes               them pass. If you write tests after the production code, then you may find the production code to be hard to test. You may               decide that some production code is too hard to test. You may not design the production code to be testable
                        
                            
+Conclusion 
+
+**_We have barely scratched the surface of this topic. Indeed, I think an entire book could be written about clean tests. Tests are as important to the health of a project as the production code is. Perhaps they are even more important, because tests preserve and enhance the flexibility, maintainability, and reusability of the production code. So keep your tests constantly clean. Work to make them expressive and succinct. Invent testing APIs that act as domain-specific language that helps you write the tests. If you let the tests rot, then your code will rot too. Keep your tests clean._**
+
