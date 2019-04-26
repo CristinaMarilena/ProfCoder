@@ -561,4 +561,35 @@ Can we make the code that simple? It turns out that we can. We can change the Ex
           
 This is called the SPECIAL CASE PATTERN [Fowler]. You create a class or configure an object so that it handles a special case for you. When you do, the client code doesn’t have to deal with exceptional behavior. That behavior is encapsulated in the special case object.
 
+### Using Code That Does Not Yet Exist
+
+The third party API had not been designed yet. So we decided to work out the details later. To keep from being blocked, we defined our own interface. We called it something catchy, like Transmitter. We gave it a method called transmit that took a frequency and a data stream. This was the interface we wished we had. One good thing about writing the interface we wish we had is that it’s under our control. This helps keep client code more readable and focused on what it is trying to accomplish.
+
 ![image](https://user-images.githubusercontent.com/23499989/56807840-38130400-6830-11e9-9afd-6b9b96dff0a0.png)
+
+## UNIT TESTS
+
+### The Three Laws of TDD
+
+By now everyone knows that TDD asks us to write unit tests first, before we write production code. But that rule is just the tip of the iceberg. Consider the following three laws:
+
+**_1. First Law 
+        You may not write production code until you have written a failing unit test.
+2. Second Law_**
+        **_You may not write more of a unit test than is sufficient to fail, and not compiling is failing._**
+**_3. Third Law 
+        You may not write more production code than is sufficient to pass the currently failing test. _**
+
+BEST PARAGRAPH EVER :
+
+**_But, without a test suite they lost the ability to make sure that changes to their code base worked as expected. Without a test suite they could not ensure that changes to one part of their system did not break other parts of their system. So their defect rate began to
+rise. As the number of unintended defects rose, they started to fear making changes. They stopped cleaning their production code because they feared the changes would do more harm than good. Their production code began to rot. In the end they were left with no tests,
+tangled and bug-riddled production code, frustrated customers, and the feeling that their testing effort had failed them._**
+
+That sums up almost every reason test should cover at least 90% or more of the production code.
+
+Unit testing conventions : * **BUILD-OPERATE_CHECK** as the steps for a unit test
+                           * **given_when_then** as a name for unit tests
+                           * **Single concept** per test
+                           
+                           
