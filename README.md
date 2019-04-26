@@ -458,7 +458,106 @@ https://dzone.com/articles/why-abstraction-really
 
 https://www.thoughtfulcode.com/orm-active-record-vs-data-mapper/
 
+## Error handling 
 
+Error handling is important, but if it obscures logic, it’s wrong!!!
 
+The caller must check for errors immediately after the call. Unfortunately, it’s easy to forget. For this reason it is better to **_throw an exception when you encounter an error_** . The calling code is cleaner. Its logic is not obscured by error handling.
 
+  The code after we’ve chosen to throw exceptions in methods that can detect errors:
+
+Before:
+                DeviceController.java
+                public class DeviceController {
+                ...
+                public void sendShutDown() {
+                  DeviceHandle handle = getHandle(DEV1);
+                  
+                  // Check the state of the device
+                    if (handle != DeviceHandle.INVALID) {
+                    
+                        // Save the device status to the record field
+                          retrieveDeviceRecord(handle);
+                          
+                        // If not suspended, shut down
+                        if (record.getStatus() != DEVICE_SUSPENDED) {
+                            pauseDevice(handle);
+                            clearDeviceWorkQueue(handle);
+                            closeDevice(handle);
+                        } else {
+                            logger.log("Device suspended. Unable to shut down");
+                        }
+                        
+                    } else {
+                      logger.log("Invalid handle for: " + DEV1.toString());
+                    }
+                }
+                ...
+                }
+
+ After: 
+ 
+                DeviceController.java (with exceptions)
+                public class DeviceController {
+                ...
+                public void sendShutDown() {
+                  try {
+                    tryToShutDown();
+                  } catch (DeviceShutDownError e) {
+                    logger.log(e);
+                  }
+                }
+
+              private void tryToShutDown() throws DeviceShutDownError {
+                  DeviceHandle handle = getHandle(DEV1);
+                  DeviceRecord record = retrieveDeviceRecord(handle);
+                  pauseDevice(handle);
+                  clearDeviceWorkQueue(handle);
+                  closeDevice(handle);
+              }
+              
+              private DeviceHandle getHandle(DeviceID id) {
+                ...
+                throw new DeviceShutDownError("Invalid handle for: " + id.toString());
+                ...
+             }
+  
+  
+  #### **_Write Your Try-Catch-Finally Statement First_**      
+  
+  In a way, try blocks are like transitions. You need to leave your application in a clean, consitent state after exiting a try block.
+  For this reason, is good practice to write your try-catch-finally block first so you can define what the user should expect, no matter what goes wrong in the code.
+  
+  Try to write tests that force exceptions, and then add behavior to your handler to satisfy your tests. This will cause you to build the transaction scope of the try block first and will help you maintain the transaction nature of that scope
+
+### Use Unchecked Exceptions
+
+If a client can reasonably be expected to recover from an exception, make it a checked exception. If a client cannot do anything to recover from the exception, make it an unchecked exception.
+
+### Define the Normal Flow
+
+If you follow the advice in the preceding sections, you’ll end up with a good amount of separation between your business logic and your error handling. The bulk of your code will start to look like a clean unadorned algorithm. However, the process of doing this pushes error detection to the edges of your program. You wrap external APIs so that you can throw your own exceptions, and you define a handler above your code so that you can deal with any aborted computation. Most of the time this is a great approach, but there are some times
+when you may not want to abort. Let’s take a look at an example. Here is some awkward code that sums expenses in  billing application:
+
+            try {
+              MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+              m_total += expenses.getTotal();
+            } catch(MealExpensesNotFound e) {
+              m_total += getMealPerDiem();
+            }
+            
+In this business, if meals are expensed, they become part of the total. If they aren’t, the employee gets a meal per diem amount for that day. The exception clutters the logic. Wouldn’t it be better if we didn’t have to deal with the special case? If we didn’t, our code would look much simpler. It would look like this:
+
+          MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+          m_total += expenses.getTotal();
+
+Can we make the code that simple? It turns out that we can. We can change the ExpenseReportDAO so that it always returns a MealExpense object. If there are no meal expenses, it returns a MealExpense object that returns the per diem as its total:
+
+          public class PerDiemMealExpenses implements MealExpenses {
+          public int getTotal() {
+          // return the per diem default
+          }
+          }
+          
+This is called the SPECIAL CASE PATTERN [Fowler]. You create a class or configure an object so that it handles a special case for you. When you do, the client code doesn’t have to deal with exceptional behavior. That behavior is encapsulated in the special case object.
 
