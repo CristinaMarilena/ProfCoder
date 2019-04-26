@@ -561,3 +561,4 @@ Can we make the code that simple? It turns out that we can. We can change the Ex
           
 This is called the SPECIAL CASE PATTERN [Fowler]. You create a class or configure an object so that it handles a special case for you. When you do, the client code doesn’t have to deal with exceptional behavior. That behavior is encapsulated in the special case object.
 
+![image](https://user-images.githubusercontent.com/23499989/56807840-38130400-6830-11e9-9afd-6b9b96dff0a0.png)
