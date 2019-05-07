@@ -597,7 +597,7 @@ Unit testing conventions :
   Clean tests follow five other rules that form the above acronym: 
   
 * **Fast** 
-              Tests should be fast. They should run quickly. When tests run slow, you won’t wantto run them frequently. If you don’t run               them frequently, you won’t find problems early enough to fix them easily. You won’t feel as free to clean up the code.                   Eventually the code will begin to rot.
+              Tests should be fast. They should run quickly. When tests run slow, you won’t want to run them frequently. If you don’t                 runthem frequently, you won’t find problems early enough to fix them easily. You won’t feel as free to clean up the code.               Eventually the code will begin to rot.
 * **Independent**
               Tests should not depend on each other. One test should not set up the conditions for the next test. You should be able to               run each test independently and run the tests in any order you like. When tests depend on each other, then the first one                 to fail causes a cascade of downstream failures, making diagnosis difficult and hiding downstream defects.
 * **Repeatable**
@@ -611,4 +611,11 @@ Unit testing conventions :
 Conclusion 
 
 **_We have barely scratched the surface of this topic. Indeed, I think an entire book could be written about clean tests. Tests are as important to the health of a project as the production code is. Perhaps they are even more important, because tests preserve and enhance the flexibility, maintainability, and reusability of the production code. So keep your tests constantly clean. Work to make them expressive and succinct. Invent testing APIs that act as domain-specific language that helps you write the tests. If you let the tests rot, then your code will rot too. Keep your tests clean._**
+
+
+## Systems
+
+! First rule: separate constructing a system from using it
+
+Software systems should separate the startup process, when the application objects are **constructed** and the **dependencies are “wired” together**, from the **runtime logic that takes over after startup**.
 
